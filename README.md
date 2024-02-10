@@ -1,4 +1,4 @@
-############HMMs annotation of metagenomes
+## HMMs annotation of metagenomes
 #step1 Remove the redundant protein by CD-hit
 cd-hit -i data.fa -o cd-data.fa -c 0.95 -aL 0.95 -aS 0.95 -d 0 
 
@@ -22,7 +22,7 @@ python mps_hmmsearch.py MAG_nucl.fa MAG_protein.fa ser90.hmm output_dir
 python generate_hmmsearch_rpkm_scripts.py input.list map output_dir stat > run.sh
 bash run.sh
 
-############Metagenome assemblies and reconstruction of LPDMAGs
+## Metagenome assemblies and reconstruction of LPDMAGs
 ## Assembly
 megahit -t 10 -m 0.5 --min-contig-len 500 --k-step 10 --k-min 27 \
 -1 /02.paired_data/$sampleid_paired_1.clean.fastq.gz \\
